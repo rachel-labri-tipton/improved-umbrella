@@ -1,0 +1,97 @@
+.page {
+  min-height: 100vh; /* Ensures the page takes up the full viewport height */
+  display: grid;
+  align-items: top;
+  background-image: url('/images/flames.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  font-family: 'Barlow', sans-serif;
+}
+
+.hero {
+  display: flex;
+  width: 100%;
+  margin-top: clamp(1rem, 4vh, 3rem); /* Responsive margin */
+  min-height: min(15vh, 300px);
+  background-color: white;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: fixed;
+  padding: 0 2.5rem;
+  top: 0;
+  z-index: 10;
+}
+
+.title {
+  color: black;
+  margin: 0;
+  font-weight: 300;
+  font-family: Barlow, sans-serif;
+
+  &:first-child {
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+  }
+
+  &:last-child {
+    font-size: clamp(3rem, 4vw, 4rem);
+  }
+}
+
+/* Media Queries - Using standard breakpoints */
+@media (max-width: 1024px) {
+  .hero {
+    position: fixed;
+    flex-direction: column;
+    margin-top: 3rem;
+    align-items: center;
+    justify-content: end;
+  }
+  .title:first-child {
+    font-size: clamp(2.5rem, 2.5vw, 3rem);
+  }
+  .title:last-child {
+    font-size: clamp(3rem, 4vw, 3.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+  }
+  .title {
+    &:first-child {
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+    &:last-child {
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    position: fixed; /* Fix the position */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    overflow: hidden; /* Prevent scrolling within the hero */
+    justify-content: end;
+    position: fixed; /* Fix the position */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    overflow: hidden; /* Prevent scrolling within the hero */
+  }
+
+  .title:first-child {
+    font-size: clamp(1rem, 2.5vw, 3rem);
+  }
+
+  .title:last-child {
+    font-size: clamp(2rem, 2.5vw, 2.75rem);
+  }
+}
