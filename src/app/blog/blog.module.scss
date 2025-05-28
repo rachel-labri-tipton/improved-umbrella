@@ -1,0 +1,79 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: left;
+  background-image: url('/images/blue-dots.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: black;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding-bottom: 4rem; /* Add padding to the bottom */
+}
+
+.sectionHeading {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 100;
+  font-size: 50px;
+  height: 300px;
+  width: 300px;
+  margin-top: 5rem; /* Add margin to the top */
+  border-radius: 50%;
+}
+.sectionHeading h1 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+.sectionHeadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  margin-bottom: 5rem;
+  background-color: #ddd;
+  width: 100%;
+}
+
+.blogHeading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+// .cardWrapper {
+//   display: flex;
+//   justify-content: center; /* Center the card container horizontally */
+//   margin: 0 auto; /* Center the wrapper itself */
+//   max-width: 1200px; /* Limit the maximum width of the card container */
+//   padding: 1rem; /* Add padding around the card container */
+// }
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(400px, 2fr)); /* Responsive grid */
+  gap: 50px; /* Space between cards */
+
+  /* Media query for screens smaller than 1040px */
+  @media (max-width: 1040px) {
+    grid-template-columns: 2fr; /* Stack cards in a single column */
+  }
+
+  /* Media query for screens smaller than 780px */
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr; /* Stack cards in a single column */
+    gap: 50px; /* Reduce the gap between cards for smaller screens */
+  }
+}
